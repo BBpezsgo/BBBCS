@@ -8,3 +8,8 @@ Projectmenedzsment - Projectmunka
  - Bencsik Attila
  - Csomós Zoltán
  - Bánszky Balázs
+
+- [ ] Weboldal
+  - [ ] Alap felépítés
+  - [ ] CSS / Bootstrap
+- [ ] Kérdések
