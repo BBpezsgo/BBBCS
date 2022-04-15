@@ -66,7 +66,31 @@
                 font-size: 18px;
             }
         }
+
+        .question-panel {
+            box-shadow: #0005 0px 0px 10px;
+            padding: 20px 10px;
+            margin: 20px 0px;
+        }
+
+        .row {
+            width: 99%;
+            margin-top: 20px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        iframe {
+            width: 100%;
+        }
     </style>
+    <script>
+        function resizeIframe(obj) {
+            obj.style.height = obj.contentWindow.document.body.firstElementChild.scrollHeight + 'px';
+        }
+    </script>
 </head>
 
 <body data-spy="scroll" data-target="#sidenav" data-offset="1">
@@ -76,34 +100,50 @@
         <p>Cím címe</p>
     </div>
 
-    <nav class="sidenav" id="sidenav">
-        <a href="#1">1</a>
-        <a href="#2">2</a>
-        <a href="#3">3</a>
-        <a href="#4">4</a>
-    </nav>
-
-    <div class="container" style="margin-top:-200px; margin-left: 170px;">
-        <div id="1">
-            <h2>TITLE HEADING</h2>
-            <h5>Title description, Dec 7, 2017</h5>
-            <div class="fakeimg">Fake Image</div>
-            <p>Some text..</p>
-            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                exercitation ullamco.</p>
-            <br>
+    <div class="row">
+        <div class="col-2">
+            <nav class="sidenav" id="sidenav">
+                <a href="#1">1</a>
+                <a href="#2">2</a>
+                <a href="#3">3</a>
+                <a href="#4">4</a>
+            </nav>
         </div>
-        <div id="2">
-            <h2>TITLE HEADING</h2>
-            <h5>Title description, Sep 2, 2017</h5>
-            <div class="fakeimg">Fake Image</div>
-            <p>Some text..</p>
-            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                exercitation ullamco.</p>
+        <div class="col-10">
+            <div id="1" class="container question-panel">
+                <iframe src="./questions/1.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"
+                    class="question-iframe">
+                </iframe>
+            </div>
+            <div id="2" class="container question-panel">
+                <iframe src="./questions/2.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"
+                    class="question-iframe">
+                </iframe>
+            </div>
+            <div id="2" class="container question-panel">
+                <iframe src="./questions/2.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"
+                    class="question-iframe">
+                </iframe>
+            </div>
+            <div id="3" class="container question-panel">
+                <iframe src="./questions/3.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"
+                    class="question-iframe">
+                </iframe>
+            </div>
+            <div id="4" class="container question-panel">
+                <iframe src="./questions/4.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"
+                    class="question-iframe">
+                </iframe>
+            </div>
+            <div style="margin: 20px 0px;">
+                <button class="btn btn-primary" onclick="CheckResults(this)">Ellenőrzés</button>
+                <button class="btn btn-primary" onclick="Reset(this)">Újra</button>
+                <div class="alert alert-danger result-incorrect">x a 4 kérdésből helytelen!</div>
+                <div class="alert alert-success result-correct">Az összes válasz helyes!</div>
+            </div>
         </div>
     </div>
+
 
     <div class="jumbotron text-left" style="margin-bottom:0">
         <h4>Készítették:</h4>
@@ -114,6 +154,64 @@
             <li>Bánszky Balázs</li>
         </ul>
     </div>
+
+    <script>
+        const incorrectResult = document.getElementsByClassName('result-incorrect').item(0)
+        const correctResult = document.getElementsByClassName('result-correct').item(0)
+
+        incorrectResult.style.display = 'none'
+        correctResult.style.display = 'none'
+
+        const questions = [false]
+        const iframes = document.getElementsByTagName("iframe")
+
+        /** @param {number} questionId  @param {boolean} correct */
+        function SetQuestion(questionId, correct) {
+            questions[questionId] = correct
+        }
+
+        function CheckResults(btn) {
+            /** @type {HTMLIFrameElement} */
+            var incorrectIframe = null
+
+            var incorrestQuestions = 0
+            var questions = 0
+
+            for (let i = 0; i < iframes.length; i++) {
+                const element = iframes[i];
+                if (element.contentWindow.CheckResult() == false) {
+                    incorrectIframe = element
+                    incorrestQuestions += 1
+                }
+                questions += 1
+                resizeIframe(element)
+            }
+
+            if (incorrectIframe == null) {
+                btn.scrollIntoView();
+                incorrectResult.style.display = 'none'
+                correctResult.style.display = 'inline-block'
+            } else {
+                incorrectIframe.scrollIntoView();
+                if (incorrestQuestions == questions) {
+                    incorrectResult.innerHTML = 'Az összes válaszod helytelen!'
+                } else {
+                    incorrectResult.innerHTML = incorrestQuestions + ' válaszod a(z) ' + questions + '-ból/ből helytelen!'
+                }
+                incorrectResult.style.display = 'inline-block'
+                correctResult.style.display = 'none'
+            }
+        }
+
+        function Reset(btn) {
+            for (let i = 0; i < iframes.length; i++) {
+                const element = iframes[i];
+                element.contentWindow.location.reload();
+            }
+
+            btn.scrollIntoView();
+        }
+    </script>
 
 </body>
 

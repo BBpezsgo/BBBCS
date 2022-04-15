@@ -1,0 +1,47 @@
+.example-parent {
+    color: black;
+    display: flex;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.example-origin {
+    flex-basis: 100%;
+    flex-grow: 1;
+    padding: 10px;
+}
+
+.example-draggable {
+    background-color: #eee;
+    font-weight: normal;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    transition-duration: 500ms;
+    cursor: pointer;
+}
+
+.example-draggable:hover {
+    box-shadow: #0007 0px 0px 5px;
+    transform: scale(1.1);
+}
+
+.example-dropzone {
+    flex-basis: 100%;
+    flex-grow: 1;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: #0004 0px 0px 5px inset;
+    border-radius: 5px;
+    transition-duration: 500ms;
+}
+
+.draggable-active {
+    transform: scale(1.5) !important;
+    opacity: 0 !important;
+}
+
+.dropzone-active {
+    background: #ddd;
+}
