@@ -9,7 +9,7 @@ Projectmenedzsment - Projectmunka
  - Csomós Zoltán
  - Bánszky Balázs
 
-- [ ] Weboldal
-  - [ ] Alap felépítés
-  - [ ] CSS / Bootstrap
-- [ ] Kérdések
+- ☐ Weboldal
+  - 🗹 Alap felépítés
+  - ☐ CSS / Bootstrap
+- ☐ Kérdések
