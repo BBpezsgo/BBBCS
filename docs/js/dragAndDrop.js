@@ -11,8 +11,10 @@ function onDragEnd(event) {
 }
 
 function onDragOver(event) {
-    event.preventDefault();
-    event.currentTarget.classList.add('dropzone-active');
+    if (event.currentTarget.classList.contains('example-dropzone')) {
+        event.preventDefault();
+        event.currentTarget.classList.add('dropzone-active');
+    }
 }
 
 function onDragLeave(event) {
@@ -28,7 +30,12 @@ function onDrop(event) {
         .getData('text');
     const draggableElement = document.getElementById(id);
     const dropzone = event.target;
-    dropzone.appendChild(draggableElement);
+
+    if (dropzone.classList.contains('example-dropzone')) {
+        dropzone.appendChild(draggableElement);
+    } else {
+
+    }
     dropzone.classList.remove('dropzone-active');
     event
         .dataTransfer

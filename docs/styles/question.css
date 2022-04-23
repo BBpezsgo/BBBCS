@@ -38,7 +38,7 @@
 }
 
 .draggable-active {
-    transform: scale(1.5) !important;
+    transform: scale(1.2) !important;
     opacity: 0 !important;
 }
 
