@@ -16,7 +16,8 @@
     <div>
         <!-- A kérdés -->
         <h3>
-            Question
+            Miért szükséges a PCM?<br>
+            Csoportosítsd az összekevert elemeket!
         </h3>
 
         <!-- Visszajelzések -->
@@ -35,7 +36,8 @@
             pl.: 'id="draggable-1"', 'id="draggable-2"', 'id="draggable-3"', ...
             a legutóbbinál fontos hogy egy '-'-el legyen elválasztva a 'draggable' és a szám!
         -->
-        <div class="example-parent">
+        <div class="example-parent" style="display: block;">
+
             <div class="example-dropzone" id="dropzone-1"
                 ondragover="onDragOver(event);"
                 ondragleave="onDragLeave(event);"
@@ -45,21 +47,50 @@
                 <div id="draggable-1" class="example-draggable" draggable="true"
                     ondragstart="onDragStart(event);"
                     ondragend="onDragEnd(event);">
-                    draggable
+                    Megvalósítás
                 </div>
                 <div id="draggable-2" class="example-draggable" draggable="true"
                     ondragstart="onDragStart(event);"
                     ondragend="onDragEnd(event);">
-                    draggable
+                    Tervezés
                 </div>
             </div>
+
+            <img src="../illustrations/illustration7.png" style="width: 960px;">
 
             <div class="example-dropzone" id="dropzone-2"
                 ondragover="onDragOver(event);"
                 ondragleave="onDragLeave(event);"
                 ondragend="onDragEnd2(event)"
-                ondrop="onDrop(event); OnChange(false);">
-            
+                ondrop="onDrop(event); OnChange(false);"
+                style="
+                position: relative;
+                width: 210px;
+                height: 70px;
+                top: -390px;
+                left: 365px;
+                z-index: 1;
+                padding: 5px 0px 0px 0px;
+                background: #fbf6d8;
+                "
+                >
+            </div>
+            <div class="example-dropzone" id="dropzone-3"
+                ondragover="onDragOver(event);"
+                ondragleave="onDragLeave(event);"
+                ondragend="onDragEnd2(event)"
+                ondrop="onDrop(event); OnChange(false);"
+                style="
+                position: relative;
+                width: 210px;
+                height: 70px;
+                top: -470px;
+                left: 700px;
+                z-index: 1;
+                padding: 5px 0px 0px 0px;
+                background: #d9a784;
+                "
+                >
             </div>
         </div>
     </div>
@@ -75,7 +106,7 @@
         // Pl.: Ami itt van, 2 'dropzone' van. Az első-ben nincs egy elem sem, vagyis egy üres lista van benne.
         //      A második 'dropzone'-ban pedig egy 'draggable' van, aminek az 'id'-je az 1-es, avagy
         //      a 'draggable' html elemében az 'id' mezőben a következő van: 'draggable-1'
-        const correctAnswer = [[], [1]]
+        const correctAnswer = [[], [2], [1]]
 
         
 
