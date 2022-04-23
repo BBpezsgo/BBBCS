@@ -113,6 +113,14 @@
             </nav>
         </div>
         <!-- Kérdések -->
+        <!--
+            Amit változtatni kell: a 'container question-panel' class-al rendelkező elemek id-je,
+            illetve a 'iframe' elemek 'src'-je.
+            Ha új kérdést akarsz: duplikáld az egyik html fájlt a questions-ban, nevezd át a következő sorszámra,
+            és itt az 'iframe' elemnek állítsd be a 'src' mezőjére, ahogy a többinél.
+            A html neve ha lehet legyen ugyan az mint a 'container question-panel' class-al rendelkező elemek id-je,
+            nem tudom hogy működik már a kód ☺.
+        -->
         <div class="col-10">
             <!-- Kiválasztós kérdés, 1 helyes válasz -->
             <div id="1" class="container question-panel">
@@ -127,19 +135,19 @@
                 </iframe>
             </div>
             <!-- Húzogatós kérdés -->
-            <div id="2" class="container question-panel">
+            <div id="3" class="container question-panel">
                 <iframe src="./questions/2.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"
                     class="question-iframe">
                 </iframe>
             </div>
             <!-- Kiválasztós kérdés, több helyes válasz -->
-            <div id="3" class="container question-panel">
+            <div id="4" class="container question-panel">
                 <iframe src="./questions/3.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"
                     class="question-iframe">
                 </iframe>
             </div>
             <!-- Fejlesztés alatt -->
-            <div id="4" class="container question-panel">
+            <div id="5" class="container question-panel">
                 <iframe src="./questions/4.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"
                     class="question-iframe">
                 </iframe>
