@@ -95,12 +95,15 @@
 
 <body data-spy="scroll" data-target="#sidenav" data-offset="1">
 
+    <!-- Cím/Banner -->
     <div class="jumbotron text-center" style="margin-bottom:0;">
         <h1>Címe</h1>
         <p>Cím címe</p>
     </div>
 
+    <!-- Fő tartalom -->
     <div class="row">
+        <!-- Oldalmenü -->
         <div class="col-2">
             <nav class="sidenav" id="sidenav">
                 <a href="#1">1</a>
@@ -109,32 +112,39 @@
                 <a href="#4">4</a>
             </nav>
         </div>
+        <!-- Kérdések -->
         <div class="col-10">
+            <!-- Kiválasztós kérdés, 1 helyes válasz -->
             <div id="1" class="container question-panel">
                 <iframe src="./questions/1.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"
                     class="question-iframe">
                 </iframe>
             </div>
+            <!-- Húzogatós kérdés -->
             <div id="2" class="container question-panel">
                 <iframe src="./questions/2.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"
                     class="question-iframe">
                 </iframe>
             </div>
+            <!-- Húzogatós kérdés -->
             <div id="2" class="container question-panel">
                 <iframe src="./questions/2.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"
                     class="question-iframe">
                 </iframe>
             </div>
+            <!-- Kiválasztós kérdés, több helyes válasz -->
             <div id="3" class="container question-panel">
                 <iframe src="./questions/3.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"
                     class="question-iframe">
                 </iframe>
             </div>
+            <!-- Fejlesztés alatt -->
             <div id="4" class="container question-panel">
                 <iframe src="./questions/4.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"
                     class="question-iframe">
                 </iframe>
             </div>
+            <!-- Eredmény -->
             <div style="margin: 20px 0px;">
                 <button class="btn btn-primary" onclick="CheckResults(this)">Ellenőrzés</button>
                 <button class="btn btn-primary" onclick="Reset(this)">Újra</button>
@@ -145,6 +155,7 @@
     </div>
 
 
+    <!-- Foother -->
     <div class="jumbotron text-left" style="margin-bottom:0">
         <h4>Készítették:</h4>
         <ul>
@@ -164,6 +175,12 @@
 
         const questions = [false]
         const iframes = document.getElementsByTagName("iframe")
+
+        function ResetIframeSizes() {
+            for (let i = 0; i < iframes.length; i++) {
+                resizeIframe(iframes[i])
+            }
+        }
 
         /** @param {number} questionId  @param {boolean} correct */
         function SetQuestion(questionId, correct) {

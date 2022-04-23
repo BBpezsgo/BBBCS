@@ -13,15 +13,24 @@
 
 <body>
     <div>
+        <!-- A kérdés -->
         <h3>
             Question
         </h3>
+
+        <!-- Visszajelzések -->
         <div id="incorrect" class="alert alert-danger">
             <strong>Helytelen válasz!</strong>
         </div>
         <div id="correct" class="alert alert-success">
             <strong>Helyes!</strong>
         </div>
+
+        <!-- Válaszlehetőségek -->
+        <!--
+            Az input[type=radio]-nál az 'id'-t kell változtatni,
+            illetve a label-nél a 'for'-t és a szöveget.
+        -->
         <ul>
             <li class="form-check">
                 <input type="radio" class="form-check-input" id="1" name="optradio" value="option2" onchange="OnChange(false)">
@@ -41,7 +50,13 @@
     <script src="../js/questionManager.js"></script>
 
     <script>
+        // A helyes válasz 'id'-je. Avagy az input[type=radio] elem 'id' részébe írt szám.
         const correctAnswer = 2
+
+
+
+        // A többivel nem kell foglalkozni ☺
+
         const incorrectAlert = document.getElementById('incorrect')
         const correctAlert = document.getElementById('correct')
 
@@ -75,7 +90,7 @@
                     correctAlert.style.display = 'none'
                 }
             }
-            
+
             return correct
         }
     </script>

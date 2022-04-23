@@ -14,33 +14,52 @@
 
 <body>
     <div>
+        <!-- A kérdés -->
         <h3>
             Question
         </h3>
+
+        <!-- Visszajelzések -->
         <div id="incorrect" class="alert alert-danger">
             <strong>Helytelen válasz!</strong>
         </div>
         <div id="correct" class="alert alert-success">
             <strong>Helyes!</strong>
         </div>
+        
+        <!-- Válaszlehetőségek -->
+        <!--
+            Aminek másnak kell lennie: a 'example-dropzone' class-al rendelkező elem 'id' mezője,
+            pl.: 'id="dropzone-1"', 'id="dropzone-2"', 'id="dropzone-3"', ...
+            Illetve a 'example-draggable' class-al rendelkező elemnek is az 'id' mezője,
+            pl.: 'id="draggable-1"', 'id="draggable-2"', 'id="draggable-3"', ...
+            a legutóbbinál fontos hogy egy '-'-el legyen elválasztva a 'draggable' és a szám!
+        -->
         <div class="example-parent">
             <div class="example-dropzone" id="dropzone-1"
-            ondragover="onDragOver(event);"
-            ondragleave="onDragLeave(event);"
-            ondragend="onDragEnd2(event)"
-            ondrop="onDrop(event);">
+                ondragover="onDragOver(event);"
+                ondragleave="onDragLeave(event);"
+                ondragend="onDragEnd2(event)"
+                ondrop="onDrop(event);">
+            
                 <div id="draggable-1" class="example-draggable" draggable="true"
-                ondragstart="onDragStart(event);"
-                ondragend="onDragEnd(event);">
+                    ondragstart="onDragStart(event);"
+                    ondragend="onDragEnd(event);">
+                    draggable
+                </div>
+                <div id="draggable-2" class="example-draggable" draggable="true"
+                    ondragstart="onDragStart(event);"
+                    ondragend="onDragEnd(event);">
                     draggable
                 </div>
             </div>
 
             <div class="example-dropzone" id="dropzone-2"
-            ondragover="onDragOver(event);"
-            ondragleave="onDragLeave(event);"
-            ondragend="onDragEnd2(event)"
-            ondrop="onDrop(event);">
+                ondragover="onDragOver(event);"
+                ondragleave="onDragLeave(event);"
+                ondragend="onDragEnd2(event)"
+                ondrop="onDrop(event);">
+            
             </div>
         </div>
     </div>
@@ -48,7 +67,20 @@
     <script src="../js/questionManager.js"></script>
 
     <script>
+        // A helyes válasz id-je
+        // Ez egy lista listákból.
+        // Avagy egy lista a 'dropzone' elemekből, minden 'dropzone' elemben van egy lista,
+        // amely az oda tartozó 'draggable' elemek id-jét tartalmazza
+        
+        // Pl.: Ami itt van, 2 'dropzone' van. Az első-ben nincs egy elem sem, vagyis egy üres lista van benne.
+        //      A második 'dropzone'-ban pedig egy 'draggable' van, aminek az 'id'-je az 1-es, avagy
+        //      a 'draggable' html elemében az 'id' mezőben a következő van: 'draggable-1'
         const correctAnswer = [[], [1]]
+
+        
+
+        // A többivel nem kell foglalkozni ☺
+
         const incorrectAlert = document.getElementById('incorrect')
         const correctAlert = document.getElementById('correct')
 
@@ -90,6 +122,8 @@
                     correctAlert.style.display = 'none'
                 }
             }
+            
+            parent.ResetIframeSizes()
             
             return correct
         }
