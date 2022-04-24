@@ -24,7 +24,7 @@
 
 .example-draggable:hover {
     box-shadow: #0007 0px 0px 5px;
-    transform: scale(1.1);
+    transform: scale(1.01);
 }
 
 .example-dropzone {
@@ -38,7 +38,7 @@
 }
 
 .draggable-active {
-    transform: scale(1.2) !important;
+    transform: scale(1.02) !important;
     opacity: 0 !important;
 }
 
