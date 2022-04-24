@@ -26,6 +26,7 @@
 
         body {
             scroll-behavior: smooth;
+            background-image: url('https://media.istockphoto.com/vectors/quiz-seamless-pattern-question-marks-doubt-faq-background-simple-vector-id1257643062?b=1&k=20&m=1257643062&s=170667a&w=0&h=z2tTo8a6Y3b5xHu9EN4mfWGB5PcclMCHepy4WL40EzM=');
         }
 
         .sidenav a {
@@ -89,6 +90,10 @@
         ul {
             list-style: none;
         }
+
+        .container {
+            background: #fff !important;
+        }
     </style>
     <script>
         function resizeIframe(obj) {
@@ -129,6 +134,24 @@
                     <li class="nav-item">
                         <a class="" href="#question-4">4</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="" href="#question-5">5</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="" href="#question-6">6</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="" href="#question-7">7</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="" href="#question-8">8</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="" href="#question-9">9</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="disabled" href="#question-10">10</a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -143,59 +166,68 @@
         -->
         <div class="col-10">
             <!-- Kiválasztós kérdés, 1 helyes válasz -->
-            <div id="question-1" class="container question-panel">
-                <iframe src="./questions/1.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"
+            <div id="question-1a" class="container question-panel">
+                <iframe src="./questions/1a.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"
                     class="question-iframe">
                 </iframe>
             </div>
             <!-- Húzogatós kérdés -->
-            <div id="question-2" class="container question-panel">
-                <iframe src="./questions/2.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"
-                    class="question-iframe">
-                </iframe>
-            </div>
-            <!-- Húzogatós kérdés -->
-            <div id="question-3" class="container question-panel">
-                <iframe src="./questions/2.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"
+            <div id="question-2a" class="container question-panel">
+                <iframe src="./questions/2a.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"
                     class="question-iframe">
                 </iframe>
             </div>
             <!-- Kiválasztós kérdés, több helyes válasz -->
-            <div id="question-4" class="container question-panel">
-                <iframe src="./questions/3.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"
+            <div id="question-4a" class="container question-panel">
+                <iframe src="./questions/3a.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"
                     class="question-iframe">
                 </iframe>
             </div>
 
             <!-- Kész -->
-            <div id="question-5" class="container question-panel">
+            <div id="question-1" class="container question-panel">
                 <iframe src="./questions/5.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"
                     class="question-iframe">
                 </iframe>
             </div>
-            <div id="question-6" class="container question-panel">
+            <div id="question-2" class="container question-panel">
                 <iframe src="./questions/6.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"
                     class="question-iframe">
                 </iframe>
             </div>
-            <div id="question-7" class="container question-panel">
+            <div id="question-3" class="container question-panel">
                 <iframe src="./questions/7.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"
                     class="question-iframe">
                 </iframe>
             </div>
-            <div id="question-8" class="container question-panel">
+            <div id="question-4" class="container question-panel">
                 <iframe src="./questions/8.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"
                     class="question-iframe">
                 </iframe>
             </div>
-            <div id="question-9" class="container question-panel">
+            <div id="question-5" class="container question-panel">
                 <iframe src="./questions/9.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"
                     class="question-iframe">
                 </iframe>
             </div>
-            <div id="question-10" class="container question-panel">
+            <div id="question-6" class="container question-panel">
                 <iframe src="./questions/10.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"
                     class="question-iframe" style="height: 1000px;">
+                </iframe>
+            </div>
+            <div id="question-7" class="container question-panel">
+                <iframe src="./questions/11.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"
+                    class="question-iframe">
+                </iframe>
+            </div>
+            <div id="question-8" class="container question-panel">
+                <iframe src="./questions/12.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"
+                    class="question-iframe">
+                </iframe>
+            </div>
+            <div id="question-9" class="container question-panel">
+                <iframe src="./questions/13.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"
+                    class="question-iframe">
                 </iframe>
             </div>
             <!-- Eredmény -->
@@ -210,7 +242,12 @@
 
 
     <!-- Foother -->
-    <div class="jumbotron text-left" style="margin-bottom:0">
+    <div class="jumbotron text-left" style="
+    margin-bottom:0;
+    padding: 0px 20px;
+    background: #fffb;
+    box-shadow: #fff 0px 0px 20px;
+    ">
         <h4>Készítették:</h4>
         <ul>
             <li>Barkóci Vivi</li>

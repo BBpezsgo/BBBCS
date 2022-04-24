@@ -16,7 +16,8 @@
     <div>
         <!-- A kérdés -->
         <h3>
-            Mik az előnyei a mátrix-szervezetben lévő projekteknek? (válassz 3-at)
+            Melyik menedzsment fogalma ez:<br>
+            A terület feladata a projekt különböző elemeinek összehangolása. Ennek végrehatjását a projektmenedzsment-standardok segítik.
         </h3>
 
         <!-- Visszajelzések -->
@@ -26,32 +27,28 @@
         <div id="correct" class="alert alert-success">
             <strong>Helyes!</strong>
         </div>
-        
+
         <!-- Válaszlehetőségek -->
         <!--
-            Az input[type=checkbox]-nál az 'id'-t kell változtatni,
+            Az input[type=radio]-nál az 'id'-t kell változtatni,
             illetve a label-nél a 'for'-t és a szöveget.
         -->
         <ul>
             <li class="form-check">
-                <input type="checkbox" class="form-check-input" id="1" name="optradio" value="option2" onchange="OnChange(false)">
-                <label class="form-check-label" for="1">Hatásköri konfliktusok alakulhatnak ki</label>
+                <input type="radio" class="form-check-input" id="1" name="optradio" value="option2" onchange="OnChange(false)">
+                <label class="form-check-label" for="1">Ütemezésimenedzsment</label>
             </li>
             <li class="form-check">
-                <input type="checkbox" class="form-check-input" id="2" name="optradio" value="option2" onchange="OnChange(false)">
-                <label class="form-check-label" for="2">Biztonságos</label>
+                <input type="radio" class="form-check-input" id="2" name="optradio" value="option2" onchange="OnChange(false)">
+                <label class="form-check-label" for="2">Minőségmenedzsment</label>
             </li>
             <li class="form-check">
-                <input type="checkbox" class="form-check-input" id="3" name="optradio" value="option2" onchange="OnChange(false)">
-                <label class="form-check-label" for="3">A felelőség megosztott</label>
+                <input type="radio" class="form-check-input" id="3" name="optradio" value="option2" onchange="OnChange(false)">
+                <label class="form-check-label" for="3">Intenegrációsmenedzsment</label>
             </li>
             <li class="form-check">
-                <input type="checkbox" class="form-check-input" id="4" name="optradio" value="option2" onchange="OnChange(false)">
-                <label class="form-check-label" for="4">A tagoknak nem kell kiválniuk a szervezetből</label>
-            </li>
-            <li class="form-check">
-                <input type="checkbox" class="form-check-input" id="5" name="optradio" value="option2" onchange="OnChange(false)">
-                <label class="form-check-label" for="5">Legalább két vezető irányít</label>
+                <input type="radio" class="form-check-input" id="4" name="optradio" value="option2" onchange="OnChange(false)">
+                <label class="form-check-label" for="4">Terjedelemmenedzsment</label>
             </li>
         </ul>
     </div>
@@ -59,16 +56,16 @@
     <script src="../js/questionManager.js"></script>
 
     <script>
-        // A helyes válaszok 'id'-je. Avagy az input[type=checkbox] elem 'id' részébe írt szám.
-        const correctAnswer = [2, 3, 4]
+        // A helyes válasz 'id'-je. Avagy az input[type=radio] elem 'id' részébe írt szám.
+        const correctAnswer = 3
 
-        
+
 
         // A többivel nem kell foglalkozni ☺
 
         const incorrectAlert = document.getElementById('incorrect')
         const correctAlert = document.getElementById('correct')
-        
+
         incorrectAlert.style.display = 'none'
         correctAlert.style.display = 'none'
 
@@ -76,20 +73,15 @@
         function OnChange(showResult) {
             const inputs = document.getElementsByTagName("input")
 
-            var correct = true
+            var correct = false
 
             for (let i = 0; i < inputs.length; i++) {
                 const element = inputs[i];
-                if (element.checked == true) {
-                    if (correctAnswer.indexOf(parseInt(element.id)) < 0) {
-                        correct = false
-                        break
-                    }
-                } else {
-                    if (correctAnswer.indexOf(parseInt(element.id)) >= 0) {
-                        correct = false
-                        break
-                    }
+                if (element.id == correctAnswer.toString() && element.checked == true) {
+                    correct = true
+                } else if (element.checked == true) {
+                    correct = false
+                    break
                 }
             }
 

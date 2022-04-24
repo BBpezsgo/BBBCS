@@ -17,7 +17,7 @@
     <div>
         <!-- A kérdés -->
         <h3>
-            Csoportosítsd az összekevert elemeket!
+            Párosítsd össze a PCM alapelveit!
         </h3>
 
         <!-- Visszajelzések -->
@@ -37,52 +37,98 @@
             a legutóbbinál fontos hogy egy '-'-el legyen elválasztva a 'draggable' és a szám!
         -->
         <div class="example-parent" style="display: block;">
-            <h4>Tapasztalatok</h4>
+
             <div class="example-dropzone" id="dropzone-1"
                 ondragover="onDragOver(event);"
                 ondragleave="onDragLeave(event);"
                 ondragend="onDragEnd2(event)"
-                ondrop="onDrop(event); OnChange(false);">
+                ondrop="onDrop(event); OnChange(false);"
+                style="display: block;">
             
-                <div id="draggable-3" class="example-draggable" draggable="true"
-                    ondragstart="onDragStart(event);"
-                    ondragend="onDragEnd(event);">
-                    Rövid távú szemlélet
-                </div>
-                <div id="draggable-4" class="example-draggable" draggable="true"
-                    ondragstart="onDragStart(event);"
-                    ondragend="onDragEnd(event);">
-                    Szektorális megközelítés
-                </div>
-                <div id="draggable-5" class="example-draggable" draggable="true"
-                    ondragstart="onDragStart(event);"
-                    ondragend="onDragEnd(event);">
-                    Fejlett elemzés
-                </div>
-            </div>
-
-            <h4>PCM</h4>
-            <div class="example-dropzone" id="dropzone-2"
-                ondragover="onDragOver(event);"
-                ondragleave="onDragLeave(event);"
-                ondragend="onDragEnd2(event)"
-                ondrop="onDrop(event); OnChange(false);">
-                <div id="draggable-6" class="example-draggable" draggable="true"
-                    ondragstart="onDragStart(event);"
-                    ondragend="onDragEnd(event);">
-                    Mérhető hatás
-                </div>
                 <div id="draggable-2" class="example-draggable" draggable="true"
                     ondragstart="onDragStart(event);"
                     ondragend="onDragEnd(event);">
-                    Kínálatvezérelt projektek
+                    érdekcsoportok bevonása a döntéshozatalba
                 </div>
                 <div id="draggable-1" class="example-draggable" draggable="true"
                     ondragstart="onDragStart(event);"
                     ondragend="onDragEnd(event);">
-                    Bizonytalan stratégiai keret
+                    strukturált és megalapozott döntéshozatal
+                </div>
+                <div id="draggable-3" class="example-draggable" draggable="true"
+                    ondragstart="onDragStart(event);"
+                    ondragend="onDragEnd(event);">
+                    átfogó és konzisztens elemzés
+                </div>
+                <div id="draggable-5" class="example-draggable" draggable="true"
+                    ondragstart="onDragStart(event);"
+                    ondragend="onDragEnd(event);">
+                    vertikális integráció és egységes dokumentáció
+                </div>
+                <div id="draggable-4" class="example-draggable" draggable="true"
+                    ondragstart="onDragStart(event);"
+                    ondragend="onDragEnd(event);">
+                    előnyök folyamatosságát biztosító mechanizmusok
                 </div>
             </div>
+
+            <ul class="navbar-nav">
+                <li>
+                    <h3 style="display: inline;">Projektciklus szakaszok</h3>
+                    <div class="example-dropzone" id="dropzone-2"
+                        ondragover="onDragOver(event);"
+                        ondragleave="onDragLeave(event);"
+                        ondragend="onDragEnd2(event)"
+                        ondrop="onDrop(event); OnChange(false);"
+                        style="min-width: 100px; min-height: 50px; display: inline-block;">
+                    
+                    </div>
+                </li>
+                <li>
+                    <h3 style="display: inline;">Részvétel biztosítása</h3>
+                    <div class="example-dropzone" id="dropzone-3"
+                        ondragover="onDragOver(event);"
+                        ondragleave="onDragLeave(event);"
+                        ondragend="onDragEnd2(event)"
+                        ondrop="onDrop(event); OnChange(false);"
+                        style="min-width: 100px; min-height: 50px; display: inline-block;">
+                    
+                    </div>
+                </li> 
+                <li style="vertical-align: middle;">
+                    <h3 style="display: inline;">Logikai keretmátrix</h3>
+                    <div class="example-dropzone" id="dropzone-4"
+                        ondragover="onDragOver(event);"
+                        ondragleave="onDragLeave(event);"
+                        ondragend="onDragEnd2(event)"
+                        ondrop="onDrop(event); OnChange(false);"
+                        style="min-width: 100px; min-height: 50px; display: inline-block;">
+                    
+                    </div>
+                </li> 
+                <li>
+                    <h3 style="display: inline;">Fenntarthatóság</h3>
+                    <div class="example-dropzone" id="dropzone-5"
+                        ondragover="onDragOver(event);"
+                        ondragleave="onDragLeave(event);"
+                        ondragend="onDragEnd2(event)"
+                        ondrop="onDrop(event); OnChange(false);"
+                        style="min-width: 100px; min-height: 50px; display: inline-block;">
+                    
+                    </div>
+                </li> 
+                <li>
+                    <h3 style="display: inline;">Integrált megközelítés</h3>
+                    <div class="example-dropzone" id="dropzone-6"
+                        ondragover="onDragOver(event);"
+                        ondragleave="onDragLeave(event);"
+                        ondragend="onDragEnd2(event)"
+                        ondrop="onDrop(event); OnChange(false);"
+                        style="min-width: 100px; min-height: 50px; display: inline-block;">
+                    
+                    </div>
+                </li> 
+            </ul>
         </div>
     </div>
 
@@ -97,7 +143,7 @@
         // Pl.: Ami itt van, 2 'dropzone' van. Az első-ben nincs egy elem sem, vagyis egy üres lista van benne.
         //      A második 'dropzone'-ban pedig egy 'draggable' van, aminek az 'id'-je az 1-es, avagy
         //      a 'draggable' html elemében az 'id' mezőben a következő van: 'draggable-1'
-        const correctAnswer = [[1, 2, 3], [4, 5, 6]]
+        const correctAnswer = [[], [1], [2], [3], [4], [5]]
 
         
 
