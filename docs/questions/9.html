@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../styles/question.css">
+    <link rel="stylesheet" href="../styles/scrollbar.css">
+</head>
+
+<body>
+    <div>
+        <!-- A kérdés -->
+        <h3>
+            Mik az előnyei a mátrix-szervezetben lévő projekteknek?
+        </h3>
+
+        <!-- Visszajelzések -->
+        <div id="incorrect" class="alert alert-danger">
+            <strong>Helytelen válasz!</strong>
+        </div>
+        <div id="correct" class="alert alert-success">
+            <strong>Helyes!</strong>
+        </div>
+        
+        <!-- Válaszlehetőségek -->
+        <!--
+            Az input[type=checkbox]-nál az 'id'-t kell változtatni,
+            illetve a label-nél a 'for'-t és a szöveget.
+        -->
+        <ul>
+            <li class="form-check">
+                <input type="checkbox" class="form-check-input" id="1" name="optradio" value="option2" onchange="OnChange(false)">
+                <label class="form-check-label" for="1">Hatásköri konfliktusok alakulhatnak ki</label>
+            </li>
+            <li class="form-check">
+                <input type="checkbox" class="form-check-input" id="2" name="optradio" value="option2" onchange="OnChange(false)">
+                <label class="form-check-label" for="2">Biztonságos</label>
+            </li>
+            <li class="form-check">
+                <input type="checkbox" class="form-check-input" id="3" name="optradio" value="option2" onchange="OnChange(false)">
+                <label class="form-check-label" for="3">A felelőség megosztott</label>
+            </li>
+            <li class="form-check">
+                <input type="checkbox" class="form-check-input" id="4" name="optradio" value="option2" onchange="OnChange(false)">
+                <label class="form-check-label" for="4">A tagoknak nem kell kiválniuk a szervezetből</label>
+            </li>
+            <li class="form-check">
+                <input type="checkbox" class="form-check-input" id="5" name="optradio" value="option2" onchange="OnChange(false)">
+                <label class="form-check-label" for="5">Legalább két vezető irányít</label>
+            </li>
+        </ul>
+    </div>
+
+    <script src="../js/questionManager.js"></script>
+
+    <script>
+        // A helyes válaszok 'id'-je. Avagy az input[type=checkbox] elem 'id' részébe írt szám.
+        const correctAnswer = [2, 3, 4]
+
+        
+
+        // A többivel nem kell foglalkozni ☺
+
+        const incorrectAlert = document.getElementById('incorrect')
+        const correctAlert = document.getElementById('correct')
+        
+        incorrectAlert.style.display = 'none'
+        correctAlert.style.display = 'none'
+
+        /** @param {boolean} showResult */
+        function OnChange(showResult) {
+            const inputs = document.getElementsByTagName("input")
+
+            var correct = true
+
+            for (let i = 0; i < inputs.length; i++) {
+                const element = inputs[i];
+                if (element.checked == true) {
+                    if (correctAnswer.indexOf(parseInt(element.id)) < 0) {
+                        correct = false
+                        break
+                    }
+                } else {
+                    if (correctAnswer.indexOf(parseInt(element.id)) >= 0) {
+                        correct = false
+                        break
+                    }
+                }
+            }
+
+            parent.SetQuestion(0, correct)
+
+            if (showResult == true) {
+                if (correct == true) {
+                    incorrectAlert.style.display = 'none'
+                    correctAlert.style.display = 'block'
+                } else {
+                    incorrectAlert.style.display = 'block'
+                    correctAlert.style.display = 'none'
+                }
+            }
+
+            return correct
+        }
+    </script>
+</body>
+
+</html>
